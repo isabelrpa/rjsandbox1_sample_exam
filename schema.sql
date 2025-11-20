@@ -9,14 +9,13 @@ CREATE TABLE IF NOT EXISTS recipes (
     image_path TEXT,
     image_alt TEXT,
     prep_time TEXT,
-    cook_time TEXT,
-    difficulty TEXT
+    cook_time TEXT
 );
 
 INSERT INTO recipes (
     name, category, short_description, long_description,
     ingredients_text, directions_text, image_path, image_alt,
-    prep_time, cook_time, difficulty
+    prep_time, cook_time
 )
 VALUES
     (
@@ -29,11 +28,10 @@ VALUES
         'images/about.webp',
         'Bowl of chicken adobo served with rice',
         '15 min',
-        '45 min',
-        'Easy'
+        '45 min'
     ),
     (
-        'Kare-Kare',
+        'Curry-Curry',
         'Main Course',
         'A rich peanut stew traditionally served with oxtail, vegetables, and bagoong.',
         'Kare-Kare features slow-cooked meat and vegetables in a creamy peanut sauce, often paired with shrimp paste for savoury contrast.',
@@ -42,8 +40,7 @@ VALUES
         'images/about.webp',
         'Bowl of kare-kare stew with vegetables',
         '25 min',
-        '1 hr 30 min',
-        'Intermediate'
+        '1 hr 30 min'
     ),
     (
         'Lumpia',
@@ -55,6 +52,5 @@ VALUES
         'images/lumpia.jpg',
         'Plate of golden fried lumpia with dipping sauce',
         '30 min',
-        '15 min',
-        'Medium'
+        '15 min'
     );

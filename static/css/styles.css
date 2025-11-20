@@ -54,8 +54,8 @@ body {
 /* Grid layout - arranges recipe cards responsively */
 .grid-4-col {
     display: grid;                      /* Creates a grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    /* Automatically fits as many 250px columns as possible */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Exactly two columns on wider viewports */
     gap: 20px;                          /* Space between grid items */
     padding: 0 20px;                    /* Space on left and right sides */
 }

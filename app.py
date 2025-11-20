@@ -4,7 +4,7 @@ import uuid
 from flask import Flask, render_template, request, redirect, url_for, current_app, abort
 from werkzeug.utils import secure_filename
 
-from db import get_db, init_app
+from db import get_db, init_app, init_db
 
 
 ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp', 'gif'}
@@ -27,6 +27,11 @@ def create_app():
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
     init_app(app)
+
+    database_path = app.config['DATABASE']
+    if not os.path.exists(database_path):
+        with app.app_context():
+            init_db()
 
     register_routes(app)
 

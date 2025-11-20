@@ -4,8 +4,6 @@
 
 {% block content %}
 <main class="recipe-content" role="main">
-    <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="{{ recipe.image_alt }}" class="recipe-image">
-
     <article class="recipe-details-container">
         <div class="recipe-actions">
             <a href="{{ url_for('edit_recipe', recipe_id=recipe.id) }}" class="action-link" aria-label="Edit this recipe">Edit</a>
@@ -43,5 +41,7 @@
             </div>
         </footer>
     </article>
+
+    <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="{{ recipe.image_alt }}" class="recipe-image">
 </main>
 {% endblock %}
