@@ -57,8 +57,10 @@ def register_routes(app):
             return "Recipe not found", 404
 
         recipe = dict(recipe_row)
-        ingredients = [line.strip() for line in (recipe.get('ingredients_text') or '').splitlines() if line.strip()]
-        directions = [line.strip() for line in (recipe.get('directions_text') or '').splitlines() if line.strip()]
+        ingredients_text = (recipe.get('ingredients_text') or '').replace('\\n', '\n')
+        directions_text = (recipe.get('directions_text') or '').replace('\\n', '\n')
+        ingredients = [line.strip() for line in ingredients_text.splitlines() if line.strip()]
+        directions = [line.strip() for line in directions_text.splitlines() if line.strip()]
 
         recipe_context = {
             'id': recipe['id'],
